@@ -3,7 +3,9 @@ class BooksController < ApplicationController
 
   # GET /books or /books.json
   def index
-    @books = Book.all
+    # ページネーションをつけたいデータに.page(params[:page])を追加
+    # .page(params[:page])の後に.per(2)を追加 (2)←レコード2件
+    @books = Book.all.paginate(page: params[:page])
   end
 
   # GET /books/1 or /books/1.json
