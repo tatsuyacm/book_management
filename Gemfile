@@ -61,3 +61,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # 最後の行に追加
 gem 'kaminari'
+
+# Ruby on Rails で検索機能を作ろう
+gem 'ransack'
