@@ -1,5 +1,11 @@
 class BooksController < ApplicationController
   before_action :set_book, only: %i[ show edit update destroy ]
+  before_action :set_search
+
+  def set_search
+    @search = Book.ransack(params[:q])
+    @books = @search.result
+  end
 
   # GET /books or /books.json
   def index
