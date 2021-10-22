@@ -2,16 +2,21 @@ class BooksController < ApplicationController
   before_action :set_book, only: %i[ show edit update destroy ]
   before_action :set_search
 
+  # 検索機能の追加
   def set_search
-    @search = Book.ransack(params[:q])
-    @books = @search.result
+    # @search = Book.ransack(params[:q])
+    # @books = @search.result(distinct: true)
+    @search = Book.search(params[:q])
+    @books = @search.result(distinct: true).paginate(page: params[:page], per_page: 20)
   end
 
   # GET /books or /books.json
   def index
     # ページネーションをつけたいデータに.page(params[:page])を追加
-    # .page(params[:page])の後に.per(2)を追加 (2)←レコード2件
-    @books = Book.all.paginate(page: params[:page])
+    # デフォルトでは30、 引数に:per_pageオブションを追加
+    # @books = Book.all.paginate(page: params[:page], per_page: 20)
+    @search = Book.ransack(params[:q])
+    @books = @search.result(distinct: true).paginate(page: params[:page], per_page: 20)
   end
 
   # GET /books/1 or /books/1.json
