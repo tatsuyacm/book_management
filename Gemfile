@@ -64,3 +64,6 @@ gem 'kaminari'
 
 # Ruby on Rails で検索機能を作ろう
 gem 'ransack'
+
+# rails font-awesome導入
+gem 'font-awesome-sass'
