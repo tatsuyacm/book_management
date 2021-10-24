@@ -1,11 +1,11 @@
 <%= search_form_for @search do |f| %>
     <%= f.search_field :title_or_author_or_publisher_or_category_or_ISBN_or_year_or_description_cont %>
-    <div class="actions"><%= f.submit "Search" %></div>
+    <%= f.submit "Search" %>
 <% end %>
 
 <p id="notice"><%= notice %></p>
 
-<h1>Books</h1>
+<!-- <h1>Books</h1> -->
 
 <%= will_paginate %>
 
@@ -43,6 +43,6 @@
 
 <br>
 
-<%= link_to 'New Book', new_book_path %>
+<!-- <%= link_to 'New Book', new_book_path %> -->
 
 <%= will_paginate %>
