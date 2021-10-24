@@ -1,5 +1,4 @@
 <%= search_form_for @search do |f| %>
-    <%= f.label :title_or_author_or_publisher_or_category_or_ISBN_or_year_or_description_cont, "書籍検索"%>
     <%= f.search_field :title_or_author_or_publisher_or_category_or_ISBN_or_year_or_description_cont %>
     <div class="actions"><%= f.submit "Search" %></div>
 <% end %>

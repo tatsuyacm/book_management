@@ -10,10 +10,7 @@
       <li>
         <%= link_to("ログアウト", "/users/sign_out", method: :delete, data: {confirm: "本当にログアウトしますか？"}) %>
       </li>
-    <% else %>
-      <li>
-        <%= link_to("新規登録", "/users/sign_up") %>
-      </li>
+    <% else %>      
       <li>
         <%= link_to("ログイン", "/users/sign_in") %>
       </li>
