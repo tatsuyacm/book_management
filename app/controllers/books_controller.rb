@@ -7,7 +7,7 @@ class BooksController < ApplicationController
     # @search = Book.ransack(params[:q])
     # @books = @search.result(distinct: true)
     @search = Book.search(params[:q])
-    @books = @search.result(distinct: true).paginate(page: params[:page], per_page: 20)
+    @books = @search.result(distinct: true).paginate(page: params[:page], per_page: 15)
   end
 
   # GET /books or /books.json
@@ -16,7 +16,7 @@ class BooksController < ApplicationController
     # デフォルトでは30、 引数に:per_pageオブションを追加
     # @books = Book.all.paginate(page: params[:page], per_page: 20)
     @search = Book.ransack(params[:q])
-    @books = @search.result(distinct: true).paginate(page: params[:page], per_page: 20)
+    @books = @search.result(distinct: true).paginate(page: params[:page], per_page: 15)
   end
 
   # GET /books/1 or /books/1.json
