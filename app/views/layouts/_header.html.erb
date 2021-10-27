@@ -1,8 +1,11 @@
 <header>
   <div class="header-logo">
-    <%= link_to("Home", "/") %>
+    
   </div>
   <ul>
+      <li>
+        <%= link_to("Home", "/") %>
+      </li>
     <% if user_signed_in? %>
       <li>
         <%= link_to("書籍登録", "/books/new") %>
